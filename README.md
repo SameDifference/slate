@@ -40,6 +40,8 @@ In order to declare variables, use:
 then, you can use:
 
     <script type="text/slate">
+        Slate can be mixed with text or <i>HTML</i>,
+        but using just text is preferred.
         ##name
     </script>
 
