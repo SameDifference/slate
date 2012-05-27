@@ -4,6 +4,7 @@
 		<script type="text/javascript" src="slate.js"></script>
 		<script type="text/javascript">
 			function live() {
+				slate.dict = {};
 				eval(document.getElementById('js-live').value);
 				document.getElementById('output').innerHTML = slate.process(document.getElementById('slate-live').value);
 			}
