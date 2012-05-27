@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Slate - JavaScript Templates</title>
+		<script type="text/javascript" src="slate.js"></script>
+		<script type="text/javascript">
+			function live() {
+				eval(document.getElementById('js-live').value);
+				document.getElementById('output').innerHTML = slate.process(document.getElementById('slate-live').value);
+			}
+		</script>
+		
+	</head>
+	<body>
+		<h1>Slate</h1>
+		<h3 color="#333333">Simplicity.</h3>
+		<p>JavaScript:</p>
+		<textarea onkeyup="live();" onchange="live();" cols="80" rows="8" id="js-live">
+slate.add("tagline", "<h2>Slate</h2>");
+
+slate.add("features", [ "<ul>", "<li>", "</li>", "</ul>",
+"Separate design from logic.",
+"Lists without loops.",
+"No need for unique ids.",
+"Less than a kilobyte.",
+"<a href='http://www.opensource.org/licenses/MIT'>MIT Licensed.</a>" ]);
+
+slate.add("impressed", "<p style='color:#333333;'>Impressed?</p>");
+
+slate.add("download", "<a href='http://samedifference.github.com'>Get it on GitHub</a>");
+
+		</textarea>
+		<p>Slate Code:</p>
+		<textarea onkeyup="live();" onchange="live();" id="slate-live" rows="8" cols="80">
+##tagline
+##features
+##impressed
+Download: ##download
+		</textarea>
+		<p>Output:</p>
+		<div id="output">
+
+		</div>
+	</body>
+</html>
+
