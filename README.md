@@ -26,7 +26,7 @@ In the body onload, add:
 Now, add a new slate script in the body:
 
     <script type="text/slate">
-        ##greeting
+        %%greeting%%
     </script>
 
 If everything works correctly, the output should be __Hello, World__.
@@ -40,9 +40,7 @@ In order to declare variables, use:
 then, you can use:
 
     <script type="text/slate">
-        Slate can be mixed with text or <i>HTML</i>,
-        but using just text is preferred.
-        ##name
+        %%name%%
     </script>
 
 and it will be substituted with `value`.
@@ -73,6 +71,6 @@ Slate will automatically detect that you want a list and act appropriately.
 
 Now use:
 
-    ##list
+    %%list%%
 
-In a slate block to reference the list.
+To reference the list.
