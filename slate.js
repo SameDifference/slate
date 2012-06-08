@@ -1,5 +1,8 @@
 var slate = { dict: {} };
 
+slate.start = "%";
+slate.end = "%";
+
 slate.add = (function(key, value) {
 	slate.dict[key] = value;
 });
@@ -24,9 +27,8 @@ slate.process = (function(script) {
 		} else if (slate.dict[key] instanceof Function) {
 			slate.dict[key] = slate.dict[key]();
 		}
-		script = script.replace(new RegExp("%%" + key + "%%", "g"), slate.dict[key]);
+		script = script.replace(new RegExp(slate.start + key + slate.end, "g"), slate.dict[key]);
 	}
 
 	return script;
 });
-
