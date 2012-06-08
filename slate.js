@@ -24,7 +24,7 @@ slate.process = (function(script) {
 		} else if (slate.dict[key] instanceof Function) {
 			slate.dict[key] = slate.dict[key]();
 		}
-		script = script.replace(new RegExp("##" + key, "g"), slate.dict[key]);
+		script = script.replace(new RegExp("%%" + key + "%%", "g"), slate.dict[key]);
 	}
 
 	return script;
