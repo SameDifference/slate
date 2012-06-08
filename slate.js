@@ -25,7 +25,7 @@ slate.process = (function(script) {
 			var con_string = slate.dict[key].slice(0, 4);
 			slate.dict[key] = con_string[0] + con_string[1] + slate.dict[key].slice(4, slate.dict[key].length).join(con_string[2] + con_string[1]) + con_string[3];
 		} else if (slate.dict[key] instanceof Function) {
-			slate.dict[key] = slate.dict[key]();
+			key = slate.dict[key]();
 		}
 		script = script.replace(slate.start + key + slate.end, slate.dict[key]);
 	}
